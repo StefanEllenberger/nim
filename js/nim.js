@@ -3,10 +3,12 @@ function Nim(player1,player2,maxGrab){
   this.player1 = player1;
   this.player2 = player2;
   this.player1turn = true;
+  this.complete = false;
   this.total = 36;
   this.maxGrab = (maxGrab? maxGrab : 3);
 
   this.victory = function(){
+    this.complete = true;
     console.log(this.playername()+" vant!");
   }
 
@@ -26,6 +28,7 @@ function Nim(player1,player2,maxGrab){
   }
 
   this.checklegal = function(amount){
+    if (this.complete) throw new Error("Spillet er over!");
     if (amount>this.maxGrab || amount<1){
       throw new Error("Antall må være mellom 1 og "+this.maxGrab);
     }
