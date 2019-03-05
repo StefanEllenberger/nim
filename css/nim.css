@@ -1,5 +1,9 @@
 h1 {
   color: #EA41E6;
+  font-size: 30px;
+  font-family: "Michroma";
+  text-shadow: 3px 3px 5px #000000;
+
 }
 
 .rows {
@@ -10,7 +14,6 @@ h1 {
 .player {
   display: flex;
   flex: 30%;
-  background-color: #f1f1f1;
   padding: 20px;
   justify-content: space-evenly;
 }
@@ -25,13 +28,13 @@ h1 {
 .middle {
   display: flex;
   flex: 40%;
-  background-color: white;
   padding: 20px;
   justify-content: space-between;
 }
 
 button {
-  background-color: lightgrey;
+  font-family: 'Michroma';
+  background-color: #76FBFC;
   border: none;
   color: black;
   padding: 15px 32px;
@@ -39,11 +42,11 @@ button {
   text-align: center;
   display: inline-block;
   font-size: 20px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #037d7d;
 }
 
 button:active {
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #037d7d;
   transform: translateY(3px);
 }
 
@@ -56,11 +59,11 @@ button:focus {
   /* desktop: */
   body {
     background-color: #555555;
-    /* background-image: url("bg.png");
+    background-image: url("bg.png");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
   }
 
   .rows {
@@ -82,7 +85,11 @@ button:focus {
   }
 
   .middle {
-    font-size: 40px;
+    font-size: 35px;
+    font-family: 'Michroma';
+    color: #F7547A;
+    text-shadow: 2px 2px #000000;
+    align-items: center;
     justify-content: center;
   }
 
