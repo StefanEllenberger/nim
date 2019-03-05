@@ -1,5 +1,9 @@
+h1 {
+  color: #EA41E6;
+}
+
 .rows {
-  /* display: flex; */
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -51,6 +55,42 @@ button:focus {
 
   /* desktop: */
   body {
-    background-color: green;
+    background-color: #555555;
+    /* background-image: url("bg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+
+  .rows {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .player {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .player.player1 {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  .middle {
+    font-size: 40px;
+    justify-content: center;
+  }
+
+  .middle .player1 {
+    display: none;
+  }
+
+  h1.player1 {
+    display: none;
   }
 }
