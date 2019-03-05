@@ -1,7 +1,43 @@
-.flex-container {
-  display: flex;
-  flex-direction: column;
+.rows {
+  /* display: flex; */
+  flex-wrap: wrap;
 }
+
+.player {
+  display: flex;
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.middle {
+  display: flex;
+  flex: 40%;
+  background-color: white;
+  padding: 20px;
+  justify-content: center;
+
+}
+
+button {
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  border-radius: 8px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0 9px #999;
+
+}
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
+
 
 @media only screen and (min-width: 768px) {
   /* desktop: */
