@@ -11,13 +11,19 @@
   justify-content: space-evenly;
 }
 
+.player1 {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
 .middle {
   display: flex;
   flex: 40%;
   background-color: white;
   padding: 20px;
-  justify-content: center;
-
+  justify-content: space-between;
 }
 
 button {
@@ -30,8 +36,8 @@ button {
   display: inline-block;
   font-size: 20px;
   box-shadow: 0 9px #999;
-
 }
+
 button:active {
   box-shadow: 0 5px #666;
   transform: translateY(3px);
@@ -41,11 +47,10 @@ button:focus {
   outline: 0;
 }
 
-
-
 @media only screen and (min-width: 768px) {
+
   /* desktop: */
-  body{
+  body {
     background-color: green;
   }
 }
