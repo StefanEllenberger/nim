@@ -23,6 +23,9 @@ function updategameview(){
   if (game.player2.human == true){
     switchPlayer2();
   }
+  if (game.complete){
+    disableBoth();
+  }
 }
 
 function switchPlayer1(){
