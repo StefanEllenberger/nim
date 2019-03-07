@@ -13,7 +13,8 @@ function creategame(name1,name2=""){
 
 function updategameview(){
   document.getElementById('turn').innerHTML = game.turn.name;
-  document.getElementById('remaining').innerHTML = game.total;
+  document.getElementById('remaining1').innerHTML = game.total;
+  document.getElementById('remaining2').innerHTML = game.total;
 }
 
 function move(amount){
