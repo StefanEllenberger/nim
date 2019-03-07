@@ -5,12 +5,12 @@ function Nim(player1,player2,maxGrab){
   this.turn = player1;
   this.complete = false;
   this.total = 36;
-  this.maxGrab = (maxGrab? maxGrab : 3);
+  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : 3);
 
   this.victory = function(){
     this.complete = true;
-    this.remaining = 0;
-    return this.turn.name+" vant!";
+    this.total = 0;
+    return this.turn.name+" vant! F5 for ny runde.";
   }
 
   this.take = function(amount){

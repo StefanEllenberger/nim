@@ -15,9 +15,18 @@ function updategameview(){
 }
 
 function move(amount){
-  document.getElementById('message').innerHTML = game.take(amount);
+  try {
+    document.getElementById('message').innerHTML = game.take(amount);
+  }
+  catch(err) {
+    document.getElementById('message').innerHTML = err.message;
+  }
   updategameview();
-  if (!game.turn.human) AImove();
+  if (game.complete) {
+    game = undefined;
+  } else if (!game.turn.human){
+    AImove();
+  }
 }
 
 function AImove(){
@@ -31,6 +40,6 @@ validate = function() {
   if (name1=="" || document.getElementById('2p').checked && name2==""){
     document.getElementById('inputerror').style.display = "inline";
   } else {
-    creategame(name1,name2,3);
+    creategame(name1,name2,document.getElementById('maxgrab').value);
   }
 }
