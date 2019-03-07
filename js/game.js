@@ -9,6 +9,10 @@ function creategame(name1,name2=""){
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
   document.getElementById('game').style="display: inline";
+  switchPlayer1();
+  if (game.player2.human == false){
+    switchPlayer2();
+  }
 }
 
 function updategameview(){
@@ -16,7 +20,9 @@ function updategameview(){
   document.getElementById('remaining1').innerHTML = game.total;
   document.getElementById('remaining2').innerHTML = game.total;
   switchPlayer1();
-  switchPlayer2();
+  if (game.player2.human == true){
+    switchPlayer2();
+  }
 }
 
 function switchPlayer1(){
