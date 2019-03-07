@@ -15,6 +15,32 @@ function updategameview(){
   document.getElementById('turn').innerHTML = game.turn.name;
   document.getElementById('remaining1').innerHTML = game.total;
   document.getElementById('remaining2').innerHTML = game.total;
+  switchPlayer1();
+  switchPlayer2();
+}
+
+function switchPlayer1(){
+  var bool = document.getElementById('p1btn1').disabled;
+  document.getElementById('p1btn1').disabled = !bool;
+  document.getElementById('p1btn2').disabled = !bool;
+  document.getElementById('p1btn3').disabled = !bool;
+}
+
+function switchPlayer2(){
+  var bool = document.getElementById('p2btn1').disabled;
+  document.getElementById('p2btn1').disabled = !bool;
+  document.getElementById('p2btn2').disabled = !bool;
+  document.getElementById('p2btn3').disabled = !bool;
+}
+
+function disableBoth(){
+  document.getElementById('p1btn1').disabled = true;
+  document.getElementById('p1btn2').disabled = true;
+  document.getElementById('p1btn3').disabled = true;
+  document.getElementById('p2btn1').disabled = true;
+  document.getElementById('p2btn2').disabled = true;
+  document.getElementById('p2btn3').disabled = true;
+
 }
 
 function move(amount){
