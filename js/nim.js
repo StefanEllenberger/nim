@@ -2,28 +2,34 @@
 function Nim(player1,player2,maxGrab){
   this.player1 = player1;
   this.player2 = player2;
-  this.player1turn = true;
+  this.turn = player1;
   this.complete = false;
   this.total = 36;
   this.maxGrab = (maxGrab? maxGrab : 3);
 
   this.victory = function(){
     this.complete = true;
-    console.log(this.playername()+" vant!");
-  }
-
-  this.playername = function(){
-    return (this.player1turn? this.player1.name : this.player2.name);
+    this.remaining = 0;
+    return this.turn.name+" vant!";
   }
 
   this.take = function(amount){
     this.checklegal(amount);
     this.total = this.total - amount;
     if (this.total<1){
-      this.victory();
+      return this.victory();
     } else {
-      console.log(this.playername()+" fjernet "+amount+", det gjenstår "+this.total);
-      this.player1turn = !this.player1turn;
+      name = this.turn.name;
+      this.switchturns();
+      return name+" tok "+amount+".";
+    }
+  }
+
+  this.switchturns = function() {
+    if (this.turn==this.player1){
+      this.turn = this.player2;
+    } else {
+      this.turn = this.player1;
     }
   }
 

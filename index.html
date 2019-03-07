@@ -5,30 +5,8 @@
     <title>Nim</title>
     <script src="js/nim.js" charset="utf-8"></script>
     <script src="js/game.js" charset="utf-8"></script>
-    <script type="text/javascript">
-    validate = function() {
-      var name = document.getElementById("p1name").value;
-      if (name==""){
-        document.getElementById('inputerror').style.display = "inline";
-      } else {
-        alert("Your name is " +name);
-      }
-
-    }
-    </script>
   </head>
   <body>
-    <div id="setup">
-    <form onsubmit="return false;" method="post" name="myForm">
-      <input type="radio" name="players" value="1p" checked=true onclick="document.getElementById('p2name').disabled = true"> 1 Player<br>
-      <input type="radio" name="players" value="2p" onclick="document.getElementById('p2name').disabled = false"> 2 Players<br>
-        <input type="text" placeholder="Player 1 name" id="p1name" /><br>
-        <input type="text" placeholder="Player 2 name" id="p2name" disabled/><br>
-        <input type="submit" Value="Start Game" onclick="validate()" /><br>
-        <span id="inputerror" style="color: red;display: none;">Please enter name.</span>
-    </form>
-
-
-  </div>
+  <a href="nim.html">Link to game</a>
   </body>
 </html>
