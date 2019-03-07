@@ -1,4 +1,5 @@
 game = undefined;
+animspeed = 750; //robot animation in ms
 
 function creategame(name1,name2=""){
   if (!name1) throw new Error("Må ha minst 1 spiller!");
@@ -19,7 +20,7 @@ function move(amount){
     document.getElementById('message').innerHTML = game.take(amount);
   }
   catch(err) {
-    document.getElementById('message').innerHTML = err.message;
+    document.getElementById('message').innerHTML = "<font color=\"red\">"+err.message+"</font>";
   }
   updategameview();
   if (game.complete) {
@@ -29,9 +30,16 @@ function move(amount){
   }
 }
 
-function AImove(){
+function AImove(think=1){
   //create more AI logic here?
-  move(game.maxGrab);
+  if (think===4) {
+    setTimeout(move,animspeed,game.maxGrab);
+  } else {
+    setTimeout(function (){
+      document.getElementById('message').innerHTML = game.turn.name+" tenker"+".".repeat(think);
+      AImove(think+1);
+    },animspeed);
+  }
 }
 
 validate = function() {

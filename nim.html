@@ -13,11 +13,11 @@
     <form onsubmit="return false;" method="post" name="myForm">
       <input type="radio" name="players" id="1p" checked=true onclick="document.getElementById('p2name').disabled = true"> 1 Player<br>
       <input type="radio" name="players" id="2p" onclick="document.getElementById('p2name').disabled = false"> 2 Players<br>
-        <input type="text" placeholder="Player 1 name" id="p1name" /><br>
-        <input type="text" placeholder="Player 2 name" id="p2name" disabled/><br>
-        <input type="text" placeholder="Max grab (1-6)" id="maxgrab" /><br>
+        <input type="text" placeholder="Spiller 1" id="p1name" /><br>
+        <input type="text" placeholder="Spiller 2" id="p2name" disabled/><br>
+        <input type="text" placeholder="Maks kuler (1-6)" id="maxgrab" /><br>
         <input type="submit" Value="Start Nim!" onclick="validate()" /><br>
-        <span id="inputerror" style="color: red;display: none;">Please enter name(s).</span>
+        <span id="inputerror" style="color: red;display: none;">Vennligst fyll inn navn.</span>
     </form>
   </div>
 
