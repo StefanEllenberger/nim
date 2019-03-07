@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <link rel="stylesheet" href="css/nim.css">
   <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
@@ -11,15 +12,15 @@
 </head>
 
 <body>
-  <div id="setup" style="display: inline;">
+  <div id="setup">
     <form onsubmit="return false;" method="post" name="myForm">
       <input type="radio" name="players" id="1p" checked="checked" onclick="document.getElementById('p2name').disabled = true"> 1 Player<br>
       <input type="radio" name="players" id="2p" onclick="document.getElementById('p2name').disabled = false"> 2 Players<br>
-        <input type="text" placeholder="Spiller 1" id="p1name" /><br>
-        <input type="text" placeholder="Spiller 2" id="p2name" disabled/><br>
-        <input type="text" placeholder="Maks kuler (1-6)" id="maxgrab" /><br>
-        <input type="submit" Value="Start Nim!" onclick="validate()" /><br>
-        <span id="inputerror" style="color: red;display: none;">Vennligst fyll inn navn.</span>
+      <input type="text" placeholder="Spiller 1" id="p1name" /><br>
+      <input type="text" placeholder="Spiller 2" id="p2name" disabled /><br>
+      <input type="text" placeholder="Maks kuler (1-6)" id="maxgrab" /><br>
+      <input type="submit" Value="Start Nim!" onclick="validate()" /><br>
+      <span id="inputerror" style="color: red;display: none;">Vennligst fyll inn navn.</span>
     </form>
   </div>
 
@@ -33,34 +34,35 @@
     </div>
   </div>
 
-  <div class="game">
-  <h1>
-    Nim the Game
-  </h1>
-  <div class="rows">
-    <div class="player player1 p1buttons">
-      <button type="button" name="p1btn1">Select 1</button>
-      <button type="button" name="p1btn2">Select 2</button>
-      <button type="button" name="p1btn3">Select 3</button>
-    </div>
-    <div class="middle">
-      <div>
-        <p>Remaining marbles: 36</p>
+  <div id="game">
+    <h1>
+      Nim the Game
+    </h1>
+    <div class="rows">
+      <div class="player player1 p1buttons">
+        <button type="button" name="p1btn1">Select 1</button>
+        <button type="button" name="p1btn2">Select 2</button>
+        <button type="button" name="p1btn3">Select 3</button>
       </div>
-      <div class="player1">
-        <p>Remaining marbles: 36</p>
+      <div class="middle">
+        <div>
+          <p>Remaining marbles: 36</p>
+        </div>
+        <div class="player1">
+          <p>Remaining marbles: 36</p>
+        </div>
       </div>
-    </div>
-    <div class="player p2buttons">
-      <button type="button" name="p2btn1">Select 1</button>
-      <button type="button" name="p2btn2">Select 2</button>
-      <button type="button" name="p2btn3">Select 3</button>
-    </div>
+      <div class="player p2buttons">
+        <button type="button" name="p2btn1">Select 1</button>
+        <button type="button" name="p2btn2">Select 2</button>
+        <button type="button" name="p2btn3">Select 3</button>
+      </div>
 
+    </div>
+    <h1 class="player1">
+      Nim the Game
+    </h1>
   </div>
-  <h1 class="player1">
-    Nim the Game
-  </h1>
-</div>
 </body>
+
 </html>

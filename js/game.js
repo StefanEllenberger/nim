@@ -8,6 +8,7 @@ function creategame(name1,name2=""){
   updategameview();
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
+  document.getElementById('game').style="display: inline";
 }
 
 function updategameview(){
