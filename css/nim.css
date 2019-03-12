@@ -3,8 +3,8 @@
 }
 
 body{
-  background-color: black;
-  background-image: url("bg-small.png");
+  background-color: #d3d3d3;
+  /* background-image: url("bg-small.png"); */
   height: 100%;
   background-position: top;
   background-repeat: no-repeat;
@@ -77,8 +77,8 @@ button:disabled {
 
   /* desktop: */
   body {
-    background-color: #000000;
-    background-image: url("bg.png");
+    background-color: #d3d3d3;
+    /* background-image: url("bg.png"); */
     height: 100%;
     background-position: top;
     background-repeat: no-repeat;
