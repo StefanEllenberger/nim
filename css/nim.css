@@ -1,14 +1,10 @@
 #game{
-  display: none;
+  display: flex;
+  justify-content: center;
 }
 
 body{
   background-color: #d3d3d3;
-  /* background-image: url("bg-small.png"); */
-  height: 100%;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
 
 }
 
