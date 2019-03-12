@@ -2,6 +2,16 @@
   display: none;
 }
 
+body{
+  background-color: black;
+  background-image: url("bg-small.png");
+  height: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 h1 {
   color: #EA41E6;
   font-size: 30px;
@@ -67,10 +77,10 @@ button:disabled {
 
   /* desktop: */
   body {
-    background-color: #555555;
+    background-color: #000000;
     background-image: url("bg.png");
     height: 100%;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
   }
