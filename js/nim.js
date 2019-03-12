@@ -1,11 +1,14 @@
 //Construct a Nim-object
 function Nim(player1,player2,victory,total,maxGrab){
+  defaultTotal = 36;
+  defaultMaxGrab = 3;
   this.player1 = player1;
   this.player2 = player2;
   this.turn = player1;
   this.complete = false;
-  this.total = total;
-  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : 3); //denne overkjører ukurante argument som 19 eller 2.999.
+  //de to under overkjører ukurante argument som tom streng, desimaltall o.l.
+  this.total = (total>=9 && total<=99? Math.floor(total) : defaultTotal);
+  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : defaultMaxGrab);
 
   this.victory = victory;
 

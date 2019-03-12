@@ -7,22 +7,19 @@ victory = function(name){
   return name+" vant! F5 for ny runde.";
 };
 
-function creategame(name1,name2="",total=36,maxGrab=3){
+function creategame(name1,name2="",total,maxGrab){
   if (!name1) throw new Error("Må ha minst 1 spiller!");
-  p2 = (name2!==""?{name: name2,human:true}:{name: "🤖",human:false})
+  p2 = (name2!==""?{name: name2,human:true}:{name: "🤖",human:false});
   game = new Nim({name:name1,human:true},p2,victory,total,maxGrab);
   updategameview();
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
   document.getElementById('game').style="display: inline";
-  switchPlayer1();
-  if (game.player2.human == false){
-    switchPlayer2();
-  }
 }
 
 function updategameview(){
   document.getElementById('turn').innerHTML = game.turn.name;
+  console.log("Kjørte updategameview, total er: "+game.total);
   document.getElementById('remaining1').innerHTML = game.total;
   document.getElementById('remaining2').innerHTML = game.total;
   switchPlayer1();
