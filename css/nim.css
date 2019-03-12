@@ -20,6 +20,12 @@ h1 {
 
 }
 
+#setup {
+  display: flex;
+  justify-content: center;
+}
+
+
 .rows {
   display: flex;
   flex-wrap: wrap;
