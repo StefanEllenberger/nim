@@ -1,11 +1,11 @@
 //Construct a Nim-object
-function Nim(player1,player2,maxGrab,victory){
+function Nim(player1,player2,victory,total,maxGrab){
   this.player1 = player1;
   this.player2 = player2;
   this.turn = player1;
   this.complete = false;
-  this.total = 36;
-  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : 3);
+  this.total = total;
+  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : 3); //denne overkjører ukurante argument som 19 eller 2.999.
 
   this.victory = victory;
 
