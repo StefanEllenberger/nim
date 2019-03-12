@@ -1,5 +1,5 @@
 //Construct a Nim-object
-function Nim(player1,player2,maxGrab){
+function Nim(player1,player2,maxGrab,victory){
   this.player1 = player1;
   this.player2 = player2;
   this.turn = player1;
@@ -7,19 +7,15 @@ function Nim(player1,player2,maxGrab){
   this.total = 36;
   this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : 3);
 
-  this.victory = function(){
-    this.complete = true;
-    this.total = 0;
-    return this.turn.name+" vant! F5 for ny runde.";
-  }
+  this.victory = victory;
 
   this.take = function(amount){
     this.checklegal(amount);
+    name = this.turn.name;
     this.total = this.total - amount;
     if (this.total<1){
-      return this.victory();
+      return this.victory(name);
     } else {
-      name = this.turn.name;
       this.switchturns();
       return name+" tok "+amount+".";
     }

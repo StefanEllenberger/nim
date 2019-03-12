@@ -1,10 +1,16 @@
 game = undefined;
 animspeed = 750; //robot animation in ms
+victory = function(name){
+  this.complete = true;
+  this.total = 0;
+  if (!name) name = "Noen"
+  return name+" vant! F5 for ny runde.";
+};
 
 function creategame(name1,name2=""){
   if (!name1) throw new Error("Må ha minst 1 spiller!");
   p2 = (name2!==""?{name: name2,human:true}:{name: "🤖",human:false})
-  game = new Nim({name:name1,human:true},p2);
+  game = new Nim({name:name1,human:true},p2,3,victory);
   updategameview();
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
@@ -29,6 +35,7 @@ function updategameview(){
 }
 
 function switchPlayer1(){
+  //document.getElementsByTagName('tagName') use this?
   var bool = document.getElementById('p1btn1').disabled;
   document.getElementById('p1btn1').disabled = !bool;
   document.getElementById('p1btn2').disabled = !bool;
@@ -36,6 +43,7 @@ function switchPlayer1(){
 }
 
 function switchPlayer2(){
+  //document.getElementsByTagName('tagName') use this?
   var bool = document.getElementById('p2btn1').disabled;
   document.getElementById('p2btn1').disabled = !bool;
   document.getElementById('p2btn2').disabled = !bool;
@@ -43,6 +51,7 @@ function switchPlayer2(){
 }
 
 function disableBoth(){
+  //document.getElementsByTagName('tagName') use this?
   document.getElementById('p1btn1').disabled = true;
   document.getElementById('p1btn2').disabled = true;
   document.getElementById('p1btn3').disabled = true;
