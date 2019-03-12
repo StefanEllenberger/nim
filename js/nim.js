@@ -36,7 +36,7 @@ function Nim(player1,player2,maxGrab){
   this.checklegal = function(amount){
     if (this.complete) throw new Error("Spillet er over!");
     if (amount>this.maxGrab || amount<1){
-      throw new Error("Antall må være mellom 1 og "+this.maxGrab);
+      throw new Error("Antall kuler må være 1"+(this.maxGrab>1?"-"+this.maxGrab:"")+".");
     }
   }
 }

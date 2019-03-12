@@ -1,10 +1,10 @@
 game = undefined;
 animspeed = 750; //robot animation in ms
 
-function creategame(name1,name2=""){
+function creategame(name1,name2="",maxGrab){
   if (!name1) throw new Error("Må ha minst 1 spiller!");
   p2 = (name2!==""?{name: name2,human:true}:{name: "🤖",human:false})
-  game = new Nim({name:name1,human:true},p2);
+  game = new Nim({name:name1,human:true},p2,maxGrab);
   updategameview();
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
