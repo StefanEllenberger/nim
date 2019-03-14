@@ -18,10 +18,11 @@
       <input type="radio" name="players" id="2p" onclick="document.getElementById('p2name').disabled = false"> 2 Players<br>
       <input type="text" placeholder="Spiller 1" id="p1name" /><br>
       <input type="text" placeholder="Spiller 2" id="p2name" disabled /><br>
-      <input type="text" placeholder="Maks kuler (1-6)" id="maxgrab" /><br>
-      <input type="text" placeholder="Totalt antall kuler (9-99)" id="total" /><br>
+      <input type="text" placeholder="Maks kuler (2-4)" id="maxgrab" /><br>
+      <input type="text" placeholder="Totalt antall kuler (12-48)" id="total" /><br>
       <input type="submit" Value="Start Nim!" onclick="validate()" /><br>
-      <span id="inputerror" style="color: red;display: none;">Vennligst fyll inn navn.</span>
+      <span id="inputerror1" style="color: red;display: none;">Vennligst fyll inn navn.</span>
+      <span id="inputerror2" style="color: red;display: none;">Vennligst tast inn et rimelig antall kuler.</span>
     </form>
   </div>
 
@@ -34,6 +35,7 @@
         <button type="button" id="p1btn1" onclick="move(1)">Select 1</button>
         <button type="button" id="p1btn2" onclick="move(2)">Select 2</button>
         <button type="button" id="p1btn3" onclick="move(3)">Select 3</button>
+        <button type="button" id="p1btn4" onclick="move(4)">Select 4</button>
       </div>
       <div class="middle">
         <div>
@@ -47,6 +49,7 @@
         <button type="button" id="p2btn1" onclick="move(1)">Select 1</button>
         <button type="button" id="p2btn2" onclick="move(2)">Select 2</button>
         <button type="button" id="p2btn3" onclick="move(3)">Select 3</button>
+        <button type="button" id="p2btn4" onclick="move(4)">Select 4</button>
       </div>
 
     </div>
