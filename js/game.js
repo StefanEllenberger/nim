@@ -11,10 +11,19 @@ function creategame(name1,name2="",total,maxGrab){
   if (!name1) throw new Error("Må ha minst 1 spiller!");
   p2 = (name2!==""?{name: name2,human:true}:{name: "🤖",human:false});
   game = new Nim({name:name1,human:true},p2,victory,total,maxGrab);
+  hideinvisible(game.maxGrab+1);
   updategameview();
   document.getElementById('setup').style="display: none;"; //removes setup screen
   document.getElementById('maingame').style="display: inline;"; //displays game screen
   document.getElementById('game').style="display: inline";
+}
+
+function hideinvisible(max){
+  for (i=max;i<=4;i++){
+  //p1btn1
+  document.getElementById("p1btn"+i).style="display: none;";
+  document.getElementById("p2btn"+i).style="display: none;";
+  }
 }
 
 function updategameview(){
@@ -26,7 +35,7 @@ function updategameview(){
   } else if (game.player2.human == true){
     switchplayer(2);
   } else {
-    switchplayer("robot time!");
+    switchplayer();
   }
 }
 
@@ -45,7 +54,7 @@ function switchplayer(number){
 
 function flipbuttons(number,bool){
   id = "p"+number+"btn";
-  for (i=1;i<=4;i++){
+  for (i=1;i<=game.maxGrab;i++){
       document.getElementById(id+i).disabled = bool;
   }
 }
