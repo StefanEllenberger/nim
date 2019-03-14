@@ -19,44 +19,35 @@ function creategame(name1,name2="",total,maxGrab){
 
 function updategameview(){
   document.getElementById('turn').innerHTML = game.turn.name;
-  console.log("Kjørte updategameview, total er: "+game.total);
   document.getElementById('remaining1').innerHTML = game.total;
   document.getElementById('remaining2').innerHTML = game.total;
-  switchPlayer1();
-  if (game.player2.human == true){
-    switchPlayer2();
+  if (game.turn === game.player1){
+    switchplayer(1);
+  } else if (game.player2.human == true){
+    switchplayer(2);
+  } else {
+    switchplayer("robot time!");
   }
-  if (game.complete){
-    disableBoth();
+}
+
+function switchplayer(number){
+  if (number==1){
+    flipbuttons(1,false);
+    flipbuttons(2,true);
+  } else if (number==2){
+    flipbuttons(1,true);
+    flipbuttons(2,false);
+  } else {
+    flipbuttons(1,true);
+    flipbuttons(2,true);
   }
 }
 
-function switchPlayer1(){
-  var bool = document.getElementById('p1btn1').disabled;
-  document.getElementById('p1btn1').disabled = !bool;
-  document.getElementById('p1btn2').disabled = !bool;
-  document.getElementById('p1btn3').disabled = !bool;
-  document.getElementById('p1btn4').disabled = !bool;
-}
-
-function switchPlayer2(){
-  var bool = document.getElementById('p2btn1').disabled;
-  document.getElementById('p2btn1').disabled = !bool;
-  document.getElementById('p2btn2').disabled = !bool;
-  document.getElementById('p2btn3').disabled = !bool;
-  document.getElementById('p2btn4').disabled = !bool;
-}
-
-function disableBoth(){
-  document.getElementById('p1btn1').disabled = true;
-  document.getElementById('p1btn2').disabled = true;
-  document.getElementById('p1btn3').disabled = true;
-  document.getElementById('p1btn4').disabled = true;
-  document.getElementById('p2btn1').disabled = true;
-  document.getElementById('p2btn2').disabled = true;
-  document.getElementById('p2btn3').disabled = true;
-  document.getElementById('p2btn4').disabled = true;
-
+function flipbuttons(number,bool){
+  id = "p"+number+"btn";
+  for (i=1;i<=4;i++){
+      document.getElementById(id+i).disabled = bool;
+  }
 }
 
 function move(amount){
