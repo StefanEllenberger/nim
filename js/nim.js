@@ -7,8 +7,8 @@ function Nim(player1,player2,victory,total,maxGrab){
   this.turn = player1;
   this.complete = false;
   //de to under overkjører ukurante argument som tom streng, desimaltall o.l.
-  this.total = (total>=9 && total<=99? Math.floor(total) : defaultTotal);
-  this.maxGrab = (maxGrab>=1 && maxGrab<=6? Math.floor(maxGrab) : defaultMaxGrab);
+  this.total = (total>12 && total<48? Math.floor(total) : defaultTotal);
+  this.maxGrab = (maxGrab>2 && maxGrab<4? Math.floor(maxGrab) : defaultMaxGrab);
 
   this.victory = victory;
 

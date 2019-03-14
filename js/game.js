@@ -32,29 +32,30 @@ function updategameview(){
 }
 
 function switchPlayer1(){
-  //document.getElementsByTagName('tagName') use this?
   var bool = document.getElementById('p1btn1').disabled;
   document.getElementById('p1btn1').disabled = !bool;
   document.getElementById('p1btn2').disabled = !bool;
   document.getElementById('p1btn3').disabled = !bool;
+  document.getElementById('p1btn4').disabled = !bool;
 }
 
 function switchPlayer2(){
-  //document.getElementsByTagName('tagName') use this?
   var bool = document.getElementById('p2btn1').disabled;
   document.getElementById('p2btn1').disabled = !bool;
   document.getElementById('p2btn2').disabled = !bool;
   document.getElementById('p2btn3').disabled = !bool;
+  document.getElementById('p2btn4').disabled = !bool;
 }
 
 function disableBoth(){
-  //document.getElementsByTagName('tagName') use this?
   document.getElementById('p1btn1').disabled = true;
   document.getElementById('p1btn2').disabled = true;
   document.getElementById('p1btn3').disabled = true;
+  document.getElementById('p1btn4').disabled = true;
   document.getElementById('p2btn1').disabled = true;
   document.getElementById('p2btn2').disabled = true;
   document.getElementById('p2btn3').disabled = true;
+  document.getElementById('p2btn4').disabled = true;
 
 }
 
@@ -89,7 +90,15 @@ validate = function() {
   name1 = document.getElementById("p1name").value;
   name2 = document.getElementById("p2name").value;
   if (name1=="" || document.getElementById('2p').checked && name2==""){
-    document.getElementById('inputerror').style.display = "inline";
+    document.getElementById('inputerror1').style.display = "inline";
+  } else if (
+              document.getElementById("maxgrab").value<2 ||
+              document.getElementById("maxgrab").value>4 ||
+              document.getElementById("total").value<12 ||
+              document.getElementById("total").value>48
+             ) {
+
+    document.getElementById('inputerror2').style.display = "inline";
   } else {
     creategame(name1,name2,document.getElementById('total').value,document.getElementById('maxgrab').value);
   }
