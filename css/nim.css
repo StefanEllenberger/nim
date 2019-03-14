@@ -21,6 +21,14 @@ body{
   display: flex;
   flex-wrap: wrap;
 }
+.remaining {
+  font-family: 'Michroma';
+  border: none;
+  color: black;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px #037d7d
+
+}
 
 .player {
   display: flex;
@@ -107,4 +115,8 @@ button:disabled {
   h1.player1 {
     display: none;
   }
+  .remaining {
+    font-size: 24px;
+  }
+
 }
